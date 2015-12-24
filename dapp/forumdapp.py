@@ -322,6 +322,7 @@ class ForumCore (dapp.Core):
 				x['comments'].append({'id' : idComment, 'idPost' : idPost, 'content' : content, 'idPlayer': player})
 				#Set again the correct list
 				self.database.set('posts', list)
+				return
 				
 	
 	def get (self, idPost):
@@ -378,6 +379,7 @@ class ForumCore (dapp.Core):
 							poll['answers'].append(t)
 							#Set the list with the updated vote
 							self.database.set('polls', list)
+							return
 								
 
 	def addVoter(self, idPoll, player):
@@ -450,6 +452,7 @@ class ForumCore (dapp.Core):
 				if c['id']==commid and c['idPlayer']==player:
 					c['content']=comment
 					self.database.set('posts', l)
+					return
 	
 	def editPost (self, postid, title, content, player):
 		"""
@@ -462,6 +465,7 @@ class ForumCore (dapp.Core):
 				post['content']=content
 				post['title']=title
 				self.database.set('posts', l)
+				return
 	
 	def deleteComment (self, commid, player):
 		"""
@@ -474,6 +478,7 @@ class ForumCore (dapp.Core):
 				if c['id']==commid and c['idPlayer']==player:
 					post['comments'].remove(c)
 					self.database.set('posts', l)
+					return
 	
 	def deletePost (self, postid, player):
 		"""
@@ -485,6 +490,7 @@ class ForumCore (dapp.Core):
 			if post['id']==postid and post['idPlayer']==player:
 				l.remove(post)
 				self.database.set('posts', l)
+				return
 				
 				
 	def deletePoll (self, pollid, player):
@@ -497,6 +503,7 @@ class ForumCore (dapp.Core):
 			if poll['id']==pollid and poll['idPlayer']==player:
 				l.remove(poll)
 				self.database.set('polls', l)
+				return
 		
 
 class ForumAPI (dapp.API):

@@ -196,26 +196,26 @@ def getUserInfo (player):
 	return manager.actualMan.getUserInfo(player)
 
 
-def printUserInfo(UserInfo):
+def printUserInfo(UserInfo, user):
 	"""
 	This method print all info about a user
 	"""
 	posts=UserInfo[0]
-	print ('User ', manager.getUser(), ' List of All Posts:')
+	print ('User ', user, ' List of All Posts:')
 	for x in posts:
 		print ('--ID= ',x['id'],'\tTitle= ',x['title'],'\tContent= ',x['content'])
 
 	print ('-----------------------------------------------------------\n')
 
 	comments=UserInfo[1]
-	print ('User ', manager.getUser(), ' List of All Comments:')
+	print ('User ', user, ' List of All Comments:')
 	for t in comments:
 		print ('--Comment ID= ', t['id'], 'with Content= ', t['content'])
 
 	print ('-----------------------------------------------------------\n')
 
 	polls= UserInfo[2]
-	print ('User ', manager.getUser(), ' List of All Polls:')
+	print ('User ', user, ' List of All Polls:')
 	for x in polls:
 		print ('--ID= ',x['id'],'\tTitle= ',x['title'],'\tDeadline= ', time.asctime(time.gmtime(x['deadline'])))
 	
@@ -306,9 +306,9 @@ if __name__ == "__main__":
 	"""
 	
 	##############
-	# 		A: postid = createPost ('Hello post', 'Post di test')
+	# 		A: postid = createPost ('Helloo post', 'Post di test ')
 	##############
-	postid = createPost ('Hello post', 'Post di test')
+	postid = createPost ('Helloo post', 'Post di test ')
 	print ('User ', manager.getUser(), " POST -> ", postid )
 
 
@@ -388,7 +388,7 @@ if __name__ == "__main__":
 	printPostInfo (post) 
 	
 	print ('----END of Basic Test----')
-
+	
 	
 	"""
 	Advanced Test Script
@@ -524,11 +524,11 @@ if __name__ == "__main__":
 	# 		~:  getUserInfo (AUserAddress)
 	############## 
 	userInfo = getUserInfo (manager.actualWallet.getAddress())
-	printUserInfo(userInfo)
+	printUserInfo(userInfo, manager.getUser())
 	
 	manager.changeUser()
 	userInfo = getUserInfo (manager.actualWallet.getAddress())
-	printUserInfo(userInfo)
+	printUserInfo(userInfo, manager.getUser())
 	
 	
 	##############
@@ -720,20 +720,20 @@ if __name__ == "__main__":
 	# 		~:         getUserInfo (BUseraddress)
 	############## 
 	userInfo = getUserInfo (manager.walletB.getAddress())
-	printUserInfo(userInfo)
+	printUserInfo(userInfo, 'B')
 		
 	manager.changeUser()
 	userInfo = getUserInfo (manager.walletB.getAddress())
-	printUserInfo(userInfo)
+	printUserInfo(userInfo, 'B')
 	##############
 	# 		~:         getUserInfo (AUseraddress)
 	############## 
 	userInfo = getUserInfo (manager.walletA.getAddress())
-	printUserInfo(userInfo)
+	printUserInfo(userInfo, 'A')
 		
 	manager.changeUser()
 	userInfo = getUserInfo (manager.walletA.getAddress())
-	printUserInfo(userInfo)
+	printUserInfo(userInfo, 'A')
 	 
 		
 	print ('----END of Expert Test: You deserve an high score on this project!----')
