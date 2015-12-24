@@ -317,8 +317,8 @@ if __name__ == "__main__":
 	##############
 	#Wait for the message containg Post with postid
 	while not listContain(listPost(), postid):
-		print('Wait 60 seconds for the list')
-		time.sleep (60)
+		print('Wait 10 seconds for the list')
+		time.sleep (10)
 	
 	posts=listPost()
 	printListPost(posts)
@@ -343,8 +343,8 @@ if __name__ == "__main__":
 	
 	#Wait for the message containg message with commid
 	while not postHasComment(getPostInfo (postid), commid):
-		print('Wait 60 seconds for the comment')
-		time.sleep (60)
+		print('Wait 10 seconds for the comment')
+		time.sleep (10)
 		
 	post =getPostInfo (postid)
 	printPostInfo (post) 
@@ -360,8 +360,8 @@ if __name__ == "__main__":
 	postid2 = createPost ('Hello post 2', 'Post di test2')
 	print ('User ', manager.getUser(), " POST -> ", postid2 )
 
-	time.sleep (30)
-	print('Wait 30 seconds')
+	time.sleep (10)
+	print('Wait 10 seconds')
 	
 	
 	##############
@@ -377,8 +377,8 @@ if __name__ == "__main__":
 	
 	#Wait for the message containg message with commid
 	while not postHasComment(getPostInfo (postid), commid2):
-		print('Wait 60 seconds the comment')
-		time.sleep (60)  
+		print('Wait 10 seconds the comment')
+		time.sleep (10)  
 		
 	post =getPostInfo (postid)
 	printPostInfo (post) 
@@ -414,8 +414,8 @@ if __name__ == "__main__":
 	##############
 	#Wait for the message containg Poll with pollid
 	while not listContain(listPolls(), pollid):
-		print('Wait 60 seconds for the list')
-		time.sleep (60)
+		print('Wait 10 seconds for the list')
+		time.sleep (10)
 	
 	polls= listPolls()
 	printListPoll(polls)
@@ -434,8 +434,8 @@ if __name__ == "__main__":
 	voteid1 = vote (pollid, 'Answer1_1')
 	print ('User ', manager.getUser(), " Vote -> ", voteid1)
 
-	print ('Wait 30 to continue the test')
-	time.sleep (30)
+	print ('Wait 10 to continue the test')
+	time.sleep (10)
 
 	voteid2 = vote (pollid, 'Answer1_2')  #This produces a message but core logic will handles this in way that discard the vote
 	print ('User ', manager.getUser(), " Vote -> ", voteid2 )
@@ -446,8 +446,8 @@ if __name__ == "__main__":
 	##############  
 	#Wait for the message containg vote with voteid
 	while not pollHasVote(getPollInfo (pollid)  , voteid1):
-		print('Wait 60 seconds for the vote')
-		time.sleep (60)
+		print('Wait 10 seconds for the vote')
+		time.sleep (10)
 	
 	poll =getPollInfo (pollid)
 	printPollInfo (poll)  
@@ -469,8 +469,8 @@ if __name__ == "__main__":
 	# 		~: getPollInfo (pollid)   As long as the vote (voteid3) appears
 	##############  
 	while not pollHasVote(getPollInfo (pollid)  , voteid3):
-		print('Wait 60 seconds for the vote')
-		time.sleep (60)
+		print('Wait 10 seconds for the vote')
+		time.sleep (10)
 	
 	poll =getPollInfo (pollid)
 	printPollInfo (poll)  
@@ -495,8 +495,8 @@ if __name__ == "__main__":
 	############## 
 	
 	while not listContain(listPolls(), pollid2):
-		print('Wait 60 seconds for the list')
-		time.sleep (60)
+		print('Wait 10 seconds for the list')
+		time.sleep (10)
 	 
 	polls= listPolls()
 	printListPoll(polls)
@@ -587,8 +587,8 @@ if __name__ == "__main__":
 	##############
 	#Wait for the message containg Post with postid
 	while not postContainEdit(getPostInfo(postid), 'New hello post A'):
-		print('Wait 60 seconds for the list')
-		time.sleep (60)
+		print('Wait 10 seconds for the list')
+		time.sleep (10)
 
 	posts=listPost()
 	printListPost(posts)
@@ -618,8 +618,8 @@ if __name__ == "__main__":
 	manager.changeUser()
 	#Wait for the message containg message with commid
 	while not postHasComment(getPostInfo (postid), commid3):
-		print('Wait 60 seconds for the comment')
-		time.sleep (60)
+		print('Wait 10 seconds for the comment')
+		time.sleep (10)
 		
 	getPostInfo (postid)
 	
@@ -650,8 +650,8 @@ if __name__ == "__main__":
 	##############   
 	#Wait for the message delete message with commid
 	while postHasComment(getPostInfo (postid), commid3):
-		print('Wait 60 seconds for the comment')
-		time.sleep (60)
+		print('Wait 10 seconds for the comment')
+		time.sleep (10)
 		
 	getPostInfo (postid)
 	
@@ -685,8 +685,8 @@ if __name__ == "__main__":
 	
     #Wait for the message containg Post with postid to disappear
 	while listContain(listPost(), postid):
-		print('Wait 60 seconds for the list')
-		time.sleep (60)   
+		print('Wait 10 seconds for the list')
+		time.sleep (10)   
 	
 	try:
 		posts=listPost()
@@ -711,8 +711,8 @@ if __name__ == "__main__":
 	############## 
 	
 	while listContain(listPolls(), pollid2):
-		print('Wait 60 seconds for the list')
-		time.sleep (60)
+		print('Wait 10 seconds for the list')
+		time.sleep (10)
 		
 	polls= listPolls()
 	printListPoll(polls)	
